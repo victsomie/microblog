@@ -19,8 +19,6 @@ def index():
             'body': 'Python is cool too!' 
         }
     ]
-
-
     return render_template('index.html',
                            title='Home',
                            user=user,

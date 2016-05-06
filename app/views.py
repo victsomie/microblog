@@ -24,24 +24,8 @@ def index():
                            title='Home',
                            user=user,
                            posts=posts)
-
-def about():
-    user = {'nickname': 'Miguel'}  # fake user
-    posts = [  # fake array of posts
-        {
-            'author': {'nickname': 'John'},
-            'body': 'Beautiful day in Portland!'
-        },
-        {
-            'author': {'nickname': 'Susan'},
-            'body': 'The Avengers movie was so cool!'
-        },
-        {
-            'author': {'nickname': 'victor'},
-            'body': 'Python is cool too!'
-        }
-    ]
     return render_template('about.html',
-                           title='Home',
+                           title='About',
                            user=user,
                            posts=posts)
+

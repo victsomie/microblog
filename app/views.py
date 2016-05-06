@@ -3,6 +3,12 @@ from app import app
 
 @app.route('/')
 @app.route('/index')
+
+@app.route('/hello')
+def hello():
+    return 'Hello World'
+
+
 @app.route('/about')
 def index():
     user = {'nickname': 'Miguel'}  # fake user

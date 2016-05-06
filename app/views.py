@@ -6,12 +6,22 @@ from app import app
 
 @app.route('/hello')
 def hello():
-    return 'Hello World'
+    user = {'nickname': 'Peter'}  # fake user
+    posts = [  # fake array of posts
+        {
+            'author': {'nickname': 'Victor 2'},
+            'body': 'It\' cool learning Flask!'
+        }
+    ]
+    return render_template('index.html',
+                           title='Page ingine ya hello!',
+                           user=user,
+                           posts=posts)
 
 
 @app.route('/about')
 def index():
-    user = {'nickname': 'Miguel'}  # fake user
+    user = {'nickname': 'Peter'}  # fake user
     posts = [  # fake array of posts
         { 
             'author': {'nickname': 'John'}, 
@@ -34,4 +44,3 @@ def index():
                            title='About',
                            user=user,
                            posts=posts)
-

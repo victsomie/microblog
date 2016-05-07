@@ -47,7 +47,7 @@ def index():
 
 
 
-def login():
+def jlogin():
     form = LoginForm()
     return render_template('login.html',
                            title='Sign In',

@@ -1,5 +1,9 @@
-from flask import render_template
+from flask import render_template, flash, redirect #Added imports
 from app import app
+from .form import LoginForm  #imported our LoginForm class, instantiated an object from it
+
+
+
 
 @app.route('/')
 @app.route('/index')
@@ -41,8 +45,19 @@ def index():
                            user=user,
                            posts=posts)
 
-""" return render_template('about.html',
-                           title='About',
-                           user=user,
-                           posts=posts)
-"""
+
+
+def login():
+    form = LoginForm()
+    return render_template('login.html',
+                           title='Sign In',
+                           form=form)
+
+
+@app.route('/login', methods=['GET', 'POST'])
+#methods argument in the route decorator. This tells Flask that this view function accepts GET and POST requests
+def login():
+    form = LoginForm()
+    return render_template('login.html',
+                           title='Sign In',
+                           form=form)

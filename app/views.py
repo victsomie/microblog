@@ -13,7 +13,7 @@ def hello():
             'body': 'It\' cool learning Flask!'
         }
     ]
-    return render_template('index.html',
+    return render_template('hello.html',
                            title='Page ingine ya hello!',
                            user=user,
                            posts=posts)
@@ -40,7 +40,9 @@ def index():
                            title='Home',
                            user=user,
                            posts=posts)
-    return render_template('about.html',
+
+""" return render_template('about.html',
                            title='About',
                            user=user,
                            posts=posts)
+"""

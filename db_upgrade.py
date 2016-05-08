@@ -1,4 +1,7 @@
 #!flask/bin/python
+
+#When you run this script, the database will be upgraded to the latest revision, by applying the migration scripts stored in the database repository.
+
 from migrate.versioning import api
 from config import SQLALCHEMY_DATABASE_URI
 from config import SQLALCHEMY_MIGRATE_REPO

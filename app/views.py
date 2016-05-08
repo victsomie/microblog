@@ -47,13 +47,14 @@ def index():
 
 
 
+"""
 def jlogin():
     form = LoginForm()
     return render_template('login.html',
                            title='Sign In',
                            form=form)
 
-
+"""
 @app.route('/login', methods=['GET', 'POST'])
 #methods argument in the route decorator. This tells Flask that this view function accepts GET and POST requests
 def login():

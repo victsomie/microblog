@@ -15,6 +15,10 @@ def hello():
         {
             'author': {'nickname': 'Victor 2'},
             'body': 'It\' cool learning Flask!'
+        },
+        {
+            'author': {'nickname': 'Victor 2'},
+            'body': 'another thing her!'
         }
     ]
     return render_template('hello.html',

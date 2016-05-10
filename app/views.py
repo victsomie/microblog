@@ -71,3 +71,13 @@ def login():
                            title='Sign In',
                            form=form,
                            providers=app.config['OPENID_PROVIDERS'])
+
+
+#function that loads a user from the database
+@lm.user_loader
+def load_user(id):
+    return User.query.get(int(id))
+"""
+Note how this function is registered with Flask-Login through the lm.user_loader decorator. Also remember that user ids in Flask-Login are always unicode strings, so a conversion to an integer is necessary before we can send the id to Flask-SQLAlchemy.
+
+"""

@@ -1,6 +1,8 @@
-from flask import render_template, flash, redirect #Added imports
-from app import app
-from .form import LoginForm  #imported our LoginForm class, instantiated an object from it
+from flask import render_template, flash, redirect, session, url_for, request, g #Added imports
+from flask.ext.login import login_user, logout_user, current_user, login_required
+from app import app, db, lm, oid
+from .forms import LoginForm
+from .models import User #imported our LoginForm class, instantiated an object from it
 
 
 

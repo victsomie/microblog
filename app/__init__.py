@@ -8,7 +8,7 @@ from flask.ext.login import LoginManager
 from flask.ext.openid import OpenID
 from config import basedir
 
-
+app = Flask(__name__)
 
 lm = LoginManager()
 lm.init_app(app)
@@ -17,7 +17,7 @@ oid = OpenID(app, os.path.join(basedir, 'tmp'))
 
 
 
-app = Flask(__name__)
+
 app.config.from_object('config') #tell Flask to read it and use it
 db = SQLAlchemy(app) #db is our databse
 

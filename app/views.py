@@ -18,7 +18,8 @@ def index():
 
 @app.route('/hello')
 def hello():
-    user = {'nickname': 'Peter'}  # fake user
+    #user = {'nickname': 'Peter'}  # fake user
+    user = g.user #This ensures that it is accessible to only logged in users
     posts = [  # fake array of posts
         {
             'author': {'nickname': 'Victor 2'},

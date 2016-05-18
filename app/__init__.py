@@ -15,6 +15,10 @@ lm.init_app(app)
 oid = OpenID(app, os.path.join(basedir, 'tmp'))
 #--------------
 
+#Flask-Login needs to know what view logs users in.
+lm = LoginManager()
+lm.init_app(app)
+lm.login_view = 'login'
 
 
 

@@ -9,6 +9,12 @@ from .models import User #imported our LoginForm class, instantiated an object f
 
 @app.route('/')
 @app.route('/index')
+@login_required
+def index():
+    return render_template('hello.html',
+                           title='Index',
+                           user=user,
+                           posts=posts)
 
 @app.route('/hello')
 def hello():
@@ -32,7 +38,7 @@ def before_request():
     g.user = current_user
 
 @app.route('/about')
-def index():
+def about():
     user = {'nickname': 'Peter'}  # fake user
     posts = [  # fake array of posts
         { 

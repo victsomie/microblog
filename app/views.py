@@ -85,6 +85,10 @@ def login():
                            form=form,
                            providers=app.config['OPENID_PROVIDERS'])
 
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
 
 #function that loads a user from the database
 @lm.user_loader
